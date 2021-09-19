@@ -1,0 +1,157 @@
+.custom--8131 {
+  bottom: -250px;
+  left: -200px;
+  max-width: 550px;
+}
+
+.custom--1451 {
+  top: -25px;
+  left: -30px;
+  width: 256px;
+  height: 208px;
+}
+
+@media only screen and (max-width: 575px) {
+  .custom--1451 {
+    top: -100px;
+    left: -100px;
+  }
+}
+
+.custom--1512 {
+  bottom: -28vw;
+  left: 50vw;
+  width: 75vw;
+  height: 75vw;
+  background-size: cover;
+}
+
+.custom--4124 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40vw;
+  height: 100%;
+  background-position: top left;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 991px) {
+  .custom--4124 {
+    right: 0;
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .custom--4124 {
+    right: -50vw;
+    width: 100vw;
+  }
+}
+
+.custom--1259 {
+  top: -20px;
+  right: -5px;
+  width: 256px;
+  height: 208px;
+}
+
+.custom--2355 {
+  bottom: -250px;
+  left: 0;
+  width: 389px;
+  height: 550px;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.mahali-photo {
+  filter: contrast(10000%) brightness(0) saturate(100%) grayscale(100%);
+}
+
+.mahali-photo:hover {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  height: 100%;
+  /* filter: brightness(50%) saturate(50%) grayscale(100%); */
+
+  -webkit-animation: fadeInFromNone 0.5s ease-out;
+  -moz-animation: fadeInFromNone 0.5s ease-out;
+  -o-animation: fadeInFromNone 0.5s ease-out;
+  animation: fadeInFromNone 0.5s ease-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
