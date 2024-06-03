@@ -6,12 +6,12 @@
 
   VLTJS.animatedBlock = {
     init: function () {
-      var el = $(".animated-block");
+      var el = $(".vlt-animated-block");
       el.each(function () {
         var $this = $(this);
         VLTJS.window.on("vlt.change-slide", function () {
           $this.removeClass("animated");
-          if ($this.parents(".section").hasClass("active")) {
+          if ($this.parents(".vlt-section").hasClass("active")) {
             $this.addClass("animated");
           }
         });
@@ -33,7 +33,7 @@
 // 			if (typeof $.fn.validate == 'undefined') {
 // 				return;
 // 			}
-// 			var el = $('.contact-form');
+// 			var el = $('.vlt-contact-form');
 // 			el.each(function () {
 // 				var thisForm = $(this),
 // 					successMessage = thisForm.find('.message.success'),
@@ -82,7 +82,7 @@
       if (typeof $.fn.numerator == "undefined") {
         return;
       }
-      var el = $(".counter-up, .counter-up-small");
+      var el = $(".vlt-counter-up, .vlt-counter-up-small");
 
       el.each(function () {
         var $this = $(this),
@@ -90,7 +90,7 @@
           ending_number = $this.data("ending-number") || 0,
           delimiter = $this.data("delimiter") || false;
         VLTJS.window.on("vlt.change-slide", function () {
-          if ($this.parents(".section").hasClass("active")) {
+          if ($this.parents(".vlt-section").hasClass("active")) {
             var counter_el = $this.find(".counter").html("0");
             setTimeout(function () {
               counter_el.numerator({
@@ -115,13 +115,13 @@
 
   VLTJS.customCursor = {
     init: function () {
-      if (!$(".is--custom-cursor").length) {
+      if (!$(".vlt-is--custom-cursor").length) {
         return;
       }
       VLTJS.body.append(
-        '<div class="custom-cursor"><div class="circle"><span></span></div></div>'
+        '<div class="vlt-custom-cursor"><div class="circle"><span></span></div></div>'
       );
-      var cursor = $(".custom-cursor"),
+      var cursor = $(".vlt-custom-cursor"),
         circle = cursor.find(".circle"),
         startPosition = {
           x: 0,
@@ -165,7 +165,7 @@
         VLTJS.document
           .on(
             "mouseenter",
-            "input, textarea, select, .video-button > a",
+            "input, textarea, select, .vlt-video-button > a",
             function () {
               gsap.to(circle, 0.3, {
                 scale: 0,
@@ -175,7 +175,7 @@
           )
           .on(
             "mouseleave",
-            "input, textarea, select, .video-button > a",
+            "input, textarea, select, .vlt-video-button > a",
             function () {
               gsap.to(circle, 0.3, {
                 scale: 1,
@@ -236,9 +236,9 @@
       if (typeof $.fn.pagepiling == "undefined") {
         return;
       }
-      var el = $(".fullpage-slider"),
-        progress_bar = el.find(".fullpage-slider-progress-bar"),
-        numbers = el.find(".fullpage-slider-numbers"),
+      var el = $(".vlt-fullpage-slider"),
+        progress_bar = el.find(".vlt-fullpage-slider-progress-bar"),
+        numbers = el.find(".vlt-fullpage-slider-numbers"),
         loop_top = el.data("loop-top") ? true : false,
         loop_bottom = el.data("loop-bottom") ? true : false,
         speed = el.data("speed") || 800,
@@ -253,9 +253,9 @@
 
       function vlthemes_navbar_solid() {
         if (el.find(".pp-section.active").scrollTop() > 0) {
-          $(".navbar").addClass("navbar--solid");
+          $(".vlt-navbar").addClass("vlt-navbar--solid");
         } else {
-          $(".navbar").removeClass("navbar--solid");
+          $(".vlt-navbar").removeClass("vlt-navbar--solid");
         }
       }
       vlthemes_navbar_solid();
@@ -269,7 +269,7 @@
       }
 
       function vlthemes_page_brightness() {
-        var section = el.find(".section.active");
+        var section = el.find(".vlt-section.active");
         switch (section.data("brightness")) {
           case "light":
             VLTJS.html.removeClass("is-light").addClass("is-dark");
@@ -297,7 +297,7 @@
       }
 
       function vlthemes_slide_counter() {
-        var section = el.find(".section.active"),
+        var section = el.find(".vlt-section.active"),
           index = section.index();
         if (index == 0) {
           numbers.html(
@@ -309,12 +309,12 @@
       }
 
       el.pagepiling({
-        menu: ".offcanvas-menu ul.sf-menu, .fullpage-slider-progress-bar",
+        menu: ".vlt-offcanvas-menu ul.sf-menu, .vlt-fullpage-slider-progress-bar",
         scrollingSpeed: speed,
         loopTop: loop_top,
         loopBottom: loop_bottom,
         anchors: anchors,
-        sectionSelector: ".section",
+        sectionSelector: ".vlt-section",
         navigation: false,
         afterRender: function () {
           vlthemes_show_navigation();
@@ -342,9 +342,9 @@
       el.find(".pp-scrollable").on("scroll", function () {
         var scrollTop = $(this).scrollTop();
         if (scrollTop > 0) {
-          $(".navbar").addClass("navbar--solid");
+          $(".vlt-navbar").addClass("vlt-navbar--solid");
         } else {
-          $(".navbar").removeClass("navbar--solid");
+          $(".vlt-navbar").removeClass("vlt-navbar--solid");
         }
       });
     },
@@ -364,14 +364,14 @@
       easing: "power2.out",
     },
     init: function () {
-      var menu = $(".offcanvas-menu"),
+      var menu = $(".vlt-offcanvas-menu"),
         navigation = menu.find("ul.sf-menu"),
         navigationItem = navigation.find("> li"),
-        header = $(".offcanvas-menu__header"),
-        footer = $(".offcanvas-menu__footer > div"),
+        header = $(".vlt-offcanvas-menu__header"),
+        footer = $(".vlt-offcanvas-menu__footer > div"),
         menuOpen = $(".js-offcanvas-menu-open"),
         menuClose = $(".js-offcanvas-menu-close"),
-        siteOverlay = $(".site-overlay");
+        siteOverlay = $(".vlt-site-overlay");
 
       if (typeof $.fn.superclick !== "undefined") {
         navigation.superclick({
@@ -640,7 +640,7 @@
   });
   el.on("animsition.inEnd", function () {
     VLTJS.window.trigger("vlt.preloader_done");
-    VLTJS.html.addClass("is-page-loaded");
+    VLTJS.html.addClass("vlt-is-page-loaded");
   });
 })(jQuery);
 /***********************************************
@@ -655,7 +655,7 @@
       if (typeof gsap == "undefined") {
         return;
       }
-      var el = $(".progress-bar");
+      var el = $(".vlt-progress-bar");
       el.each(function () {
         var $this = $(this),
           final_value = $this.data("final-value") || 0,
@@ -666,12 +666,12 @@
           };
 
         VLTJS.window.on("vlt.change-slide", function () {
-          if ($this.parents(".section").hasClass("active")) {
+          if ($this.parents(".vlt-section").hasClass("active")) {
             obj.count = 0;
             $this
-              .find(".progress-bar__title > .counter")
+              .find(".vlt-progress-bar__title > .counter")
               .text(Math.round(obj.count));
-            gsap.set($this.find(".progress-bar__bar > span"), {
+            gsap.set($this.find(".vlt-progress-bar__bar > span"), {
               width: 0,
             });
             gsap.to(obj, animation_duration / 1000 / 2, {
@@ -679,13 +679,13 @@
               delay: delay / 1000,
               onUpdate: function () {
                 $this
-                  .find(".progress-bar__title > .counter")
+                  .find(".vlt-progress-bar__title > .counter")
                   .text(Math.round(obj.count));
               },
             });
 
             gsap.to(
-              $this.find(".progress-bar__bar > span"),
+              $this.find(".vlt-progress-bar__bar > span"),
               animation_duration / 1000,
               {
                 width: final_value + "%",
@@ -711,7 +711,7 @@
       if (typeof Swiper == "undefined") {
         return;
       }
-      var el = $(".project-showcase-slider .swiper-container");
+      var el = $(".vlt-project-showcase-slider .swiper-container");
       new Swiper(el, {
         speed: 1000,
         spaceBetween: 30,
@@ -719,7 +719,29 @@
         slidesPerView: 1,
         breakpoints: {
           575: {
-            slidesPerView: 2,
+            slidesPerView: 4,
+          },
+        },
+        effect: "coverflow",
+        slidesPerView: 1,
+        navigation: {
+          nextEl: $(".vlt-project-slider-controls .next"),
+          prevEl: $(".vlt-project-slider-controls .prev"),
+        },
+        pagination: {
+          el: $(".vlt-project-slider-controls .pagination"),
+          clickable: false,
+          type: "fraction",
+          renderFraction: function (currentClass, totalClass) {
+            return (
+              '<span class="' +
+              currentClass +
+              '"></span>' +
+              '<span class="sep">/</span>' +
+              '<span class="' +
+              totalClass +
+              '"></span>'
+            );
           },
         },
       });
@@ -729,11 +751,11 @@
       if (typeof gsap == "undefined") {
         return;
       }
-      var el = $(".project-showcase"),
-        items = el.find(".project-showcase__items"),
-        item = items.find(".project-showcase__item"),
-        images = el.find(".project-showcase__images"),
-        image = images.find(".project-showcase__image"),
+      var el = $(".vlt-project-showcase"),
+        items = el.find(".vlt-project-showcase__items"),
+        item = items.find(".vlt-project-showcase__item"),
+        images = el.find(".vlt-project-showcase__images"),
+        image = images.find(".vlt-project-showcase__image"),
         wDiff,
         value;
 
@@ -788,7 +810,7 @@
       if (typeof Swiper == "undefined") {
         return;
       }
-      var el = $(".testimonial-slider .swiper-container");
+      var el = $(".vlt-testimonial-slider .swiper-container");
       el.each(function () {
         var $this = $(this);
         $this.find(".swiper-wrapper > *").wrap('<div class="swiper-slide">');
@@ -799,11 +821,11 @@
           effect: "coverflow",
           slidesPerView: 1,
           navigation: {
-            nextEl: $(".testimonial-slider-controls .next"),
-            prevEl: $(".testimonial-slider-controls .prev"),
+            nextEl: $(".vlt-testimonial-slider-controls .next"),
+            prevEl: $(".vlt-testimonial-slider-controls .prev"),
           },
           pagination: {
-            el: $(".testimonial-slider-controls .pagination"),
+            el: $(".vlt-testimonial-slider-controls .pagination"),
             clickable: false,
             type: "fraction",
             renderFraction: function (currentClass, totalClass) {
@@ -837,7 +859,7 @@
       if (typeof Swiper == "undefined") {
         return;
       }
-      var el = $(".timeline-slider .swiper-container");
+      var el = $(".vlt-timeline-slider .swiper-container");
       el.each(function () {
         var $this = $(this);
         $this.find(".swiper-wrapper > *").wrap('<div class="swiper-slide">');
@@ -847,11 +869,11 @@
           grabCursor: true,
           slidesPerView: 1,
           navigation: {
-            nextEl: $(".timeline-slider-controls .next"),
-            prevEl: $(".timeline-slider-controls .prev"),
+            nextEl: $(".vlt-timeline-slider-controls .next"),
+            prevEl: $(".vlt-timeline-slider-controls .prev"),
           },
           pagination: {
-            el: $(".timeline-slider-controls .pagination"),
+            el: $(".vlt-timeline-slider-controls .pagination"),
             clickable: false,
             type: "fraction",
             renderFraction: function (currentClass, totalClass) {

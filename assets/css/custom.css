@@ -1,10 +1,10 @@
-.custom--8131 {
+.vlt-custom--8131 {
   bottom: -250px;
   left: -200px;
   max-width: 550px;
 }
 
-.custom--1451 {
+.vlt-custom--1451 {
   top: -25px;
   left: -30px;
   width: 256px;
@@ -12,13 +12,13 @@
 }
 
 @media only screen and (max-width: 575px) {
-  .custom--1451 {
+  .vlt-custom--1451 {
     top: -100px;
     left: -100px;
   }
 }
 
-.custom--1512 {
+.vlt-custom--1512 {
   bottom: -28vw;
   left: 50vw;
   width: 75vw;
@@ -26,7 +26,7 @@
   background-size: cover;
 }
 
-.custom--4124 {
+.vlt-custom--4124 {
   top: 0;
   right: 0;
   bottom: 0;
@@ -37,27 +37,27 @@
 }
 
 @media only screen and (max-width: 991px) {
-  .custom--4124 {
+  .vlt-custom--4124 {
     right: 0;
     width: 50vw;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .custom--4124 {
+  .vlt-custom--4124 {
     right: -50vw;
     width: 100vw;
   }
 }
 
-.custom--1259 {
+.vlt-custom--1259 {
   top: -20px;
   right: -5px;
   width: 256px;
   height: 208px;
 }
 
-.custom--2355 {
+.vlt-custom--2355 {
   bottom: -250px;
   left: 0;
   width: 389px;
